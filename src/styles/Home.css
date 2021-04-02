@@ -1,0 +1,67 @@
+.first-sec{
+    background-image:linear-gradient(to right,#a517ba,#5f1782);
+    padding-top:2rem;
+}
+.first-sec h1{
+    color:white;
+}
+.first-sec h3{
+    color:white;
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:1rem;
+}
+
+.second-sec{
+    margin-top:2rem;
+}
+
+.second-sec img{
+    width:200px;
+    border-radius: 1rem;
+}
+
+.doc-text{
+    padding-top: 5rem;
+}
+
+/*---------------------------                  Third section css           ----------------- */
+
+.third-sec-text-one Button{
+    float:right;
+}
+
+.third-sec-text-one{
+    margin-top:5rem;
+}
+
+.third-sec img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* ------------------------                   Fourth Section                   ------------------ */
+.fourth-sec{
+    margin-top:5rem;
+}
+
+.fourth-sec img{
+    border-radius:1rem;
+    width:300px;
+    height:300px;
+}
+
+/* ------------------------                     Fifth Section                    ------------------- */
+.fifth-sec h1{
+    text-align: center;
+
+}
+
+.fifth-sec{
+    margin-top: 5rem;
+}
