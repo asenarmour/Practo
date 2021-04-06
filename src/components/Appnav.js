@@ -1,14 +1,15 @@
 // import React, { Component } from 'react';
 import {Nav,Navbar,NavDropdown,Button} from 'react-bootstrap';
 import  '../styles/Appnav.css';
-import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
-
+import {useSelector,useDispatch} from "react-redux";
 import React from 'react'
-
+import {updateLog} from "../actions/index"
 const Appnav = () => {
   const history = useHistory();
 
+  const isLogged=useSelector(state=>state.isLogged)
+  const dispatch=useDispatch();
   function handleClick() {
     history.push("/login");
   }
@@ -41,7 +42,19 @@ const Appnav = () => {
         <NavDropdown.Item href="#">Separated link</NavDropdown.Item>
       </NavDropdown>
     </Nav>
+      {!isLogged?
       <Button onClick={handleClick} variant="outline-success">Login/SignUp</Button>
+      :
+      <NavDropdown title="Profile" id="basic-nav-dropdown">
+      <NavDropdown.Item href="#">Profile</NavDropdown.Item>
+      <NavDropdown.Item href="#">My Test</NavDropdown.Item>
+      <NavDropdown.Item href="#">My Appointments</NavDropdown.Item>
+      <NavDropdown.Item href="#">My Medical Records</NavDropdown.Item>
+      <NavDropdown.Item href="#">My Feedback</NavDropdown.Item>
+      <NavDropdown.Divider />
+      <NavDropdown.Item href="#" onClick={()=>dispatch(updateLog())}>Logout</NavDropdown.Item>
+      </NavDropdown>
+      }
   </Navbar.Collapse>
 </Navbar>
             </div>

@@ -5,19 +5,36 @@ import logImg from '../images/log-img.webp';
 import {Container, Col, Form,FormGroup, Label, Input,Button,} from 'reactstrap';
 import Footer from './Footer';
 import axios from 'axios';
+import {useDispatch} from 'react-redux'
+import {updateLog} from '../actions/index'
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
-
+    
+    const history=useHistory();
+    const dispatch=useDispatch();
     const [item,setItem]=useState({email:'',password:''});
-    const handleClick=(e)=>{
+
+    const handleClick=async(e)=>{
         e.preventDefault()
-        axios.post(`/login`,item,
+        await axios.post(`/login`,item,
         {
             headers: {
                 'Content-Type': 'application/json'
             }
         })
-        .then(response=>{console.log(response.data)})
+        .then((response)=>{
+            if(response.data==="success" ){
+                axios.get(`/user/${item.email}`)
+                .then((response)=>{console.log(response.data)})
+                history.push("/")
+                const dis=()=>dispatch(updateLog())
+                dis()
+            }
+            else{
+                console.log(response.data);
+            }
+        })
         .catch(err => console.log(err));
     }
 
