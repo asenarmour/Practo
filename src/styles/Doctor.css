@@ -1,0 +1,82 @@
+img{
+    width:100%;
+}
+.upside{
+    background-image: url("../images/doctors_bg.jpeg");
+    padding-bottom: 3rem;
+}
+.upside h1{
+    text-align: center;
+    padding:2rem;
+}
+.upside h3,Form{
+    text-align: center;
+    justify-content: center;
+    padding:1rem;
+}
+.upside ul{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.doctor-list a{
+    color:black;
+    font-weight: bold;
+}
+.below-one{
+    background-color:#9ca996;
+    padding-left: 4rem;
+}
+
+.card-below{
+    background-color:#9ca996;
+}
+
+.below-one a{
+    color:#e4eee0;
+}
+.below-one a:hover{
+    color:white;
+    background-color: #e4eee0;
+}
+.card-below img{
+    width:2rem;
+}
+
+/* ------------------------                  Section 3              ------------------------ */
+
+.section-3{
+    background-color:#e0e0e0;
+}
+
+.section-3-first img{
+    margin: 5rem;
+    border-radius: 25%;
+    width: 50%;
+}
+.section3-second{
+    margin-top: 5rem;
+}
+.section3-second img{
+    width: 2rem;
+}
+
+.section3-second h5{
+    padding: 1 rem;
+}
+
+.section-3-third img{
+    width: 25%;
+}
+.section-4-first img{
+    border-radius: 25%;
+    width:75%;
+}
+.section-4-second img{
+    width: 2rem;
+}
+.section-4-second{
+    margin-top:10rem;
+    padding-top: 3rem;
+}
