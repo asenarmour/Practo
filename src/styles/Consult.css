@@ -1,0 +1,66 @@
+.div-temp {
+  color: aqua;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.main-pic {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+}
+
+.bling {
+  padding-top: 10px;
+}
+.temp {
+  padding-left: 10px;
+}
+
+.card-img-top {
+  height: 200px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.card {
+  height: 340px;
+}
+
+.consult-types {
+  padding: 0px 20px 10px 25px;
+}
+
+.position-fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 140px;
+  width: 335px;
+  border-radius: 10px;
+  background-color: rgb(224, 238, 247);
+}
+
+.position-fixed img {
+  padding-right: 0%;
+  float: right;
+  width: 35%;
+  height: 100%;
+}
+
+.position-fixed-text {
+  float: left;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  padding-left: 5px;
+  width: 65%;
+}
+.position-fixed-text p {
+  font-size: 13px;
+}
+
+.d-block {
+  height: 300px;
+  margin: 10px;
+  padding: 30px;
+}

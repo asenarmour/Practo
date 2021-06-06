@@ -7,8 +7,7 @@ import Footer from './Footer'
 import axios from 'axios';
 const Register = () => {
 
-    const [item,setItem] = useState({username:'',email:'',password:'',firstName:'',lastName:''})
-
+    const [item,setItem] = useState({username:'',email:'',password:'',confirmPass:'',firstName:'',lastName:'',registerAs:''})
     const handleClick=(e)=>{
         e.preventDefault()
         axios.post('/register',item,{
@@ -75,37 +74,36 @@ const Register = () => {
                             <Label for="examplePassword">Confirm Password</Label>
                             <Input
                             type="password"
+                            onChange={(e)=>setItem({...item,confirmPass:e.target.value})}
+                            value={item.confirmPass}
                             name="passwordc"
                             id="examplePassword"
                             placeholder="********"
                             />
                         </FormGroup>
                     </Col>
+                    {(item.password!==item.confirmPass) ? 
+                    <div className="password-not-matching">
+                <h5> password does not match</h5>
+                    </div> : ''}
                     <Col>
-                        <FormGroup>
-                            <Label for="firstName">First Name</Label>
-                            <Input
-                            type="text"
-                            onChange={(e)=>setItem({...item,firstName:e.target.value})}
-                            value={item.firstName}
-                            name="firstName"
-                            id="firstName"
-                            placeholder="john"
-                                />
-                            </FormGroup>
-                    </Col>
-                    <Col>
-                        <FormGroup>
-                        <Label for="lastName">First Name</Label>
-                        <Input
-                            type="text"
-                            onChange={(e)=>setItem({...item,lastName:e.target.value})}
-                            value={item.lastName}
-                            name="lastName"
-                            id="lastName"
-                            placeholder="wick"
+                        <div class="form-check-inline register-as">
+                            <label class="form-check-label" >
+                        <input type="radio" class="form-check-input" name="registerAs" 
+                        onChange={(e)=>setItem({...item,registerAs:e.target.value})}
+                        value="Patient"
                         />
-                        </FormGroup>
+                        Patient
+                            </label>
+                        </div>
+                        <div class="form-check-inline register-as">
+                            <label class="form-check-label" >
+                        <input type="radio" class="form-check-input" name="registerAs" 
+                        onChange={(e)=>setItem({...item,registerAs:e.target.value})}
+                            value="Doctor"
+                        />Doctor
+                        </label>
+                        </div>
                     </Col>
                         <Button onClick={handleClick}  type="submit">Submit</Button>
                     </Form>

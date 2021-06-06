@@ -7,7 +7,7 @@ class Footer extends Component {
                 <div className="row">
                     <div className="col">
                         <ul>
-                            <li><h3><a href="/">Practo</a></h3></li>
+                            <li><h3><a href="/">AarogyaVat</a></h3></li>
                             <li><a href="#" >About</a></li>
                             <li><a href="#" >Careers</a></li>
                             <li><a href="#" >Press</a></li>
@@ -27,17 +27,17 @@ class Footer extends Component {
                     <div className="col">
                     <ul>
                             <li><h3><a href="#">For Doctors</a></h3></li>
-                            <li><a href="#" >Practo Profile</a></li>
+                            <li><a href="#" >AarogyaVat Profile</a></li>
                         </ul>
                     </div>
                     <div className="col">
                     <ul>
                             <li><h3><a href="#">For hospitals</a></h3></li>
-                            <li><a href="#" >Insta by practo</a></li>
-                            <li><a href="#" >Qikwell by practo</a></li>
-                            <li><a href="#" >Practo Profile</a></li>
-                            <li><a href="#" >Practo Reach</a></li>
-                            <li><a href="#" >Practo Drive</a></li>
+                            <li><a href="#" >Insta by AarogyaVat</a></li>
+                            <li><a href="#" >Qikwell by AarogyaVat</a></li>
+                            <li><a href="#" >AarogyaVat Profile</a></li>
+                            <li><a href="#" >AarogyaVat Reach</a></li>
+                            <li><a href="#" >AarogyaVat Drive</a></li>
                         </ul>
                     </div>
                     <div className="col">
@@ -47,7 +47,7 @@ class Footer extends Component {
                             <li><a href="#" >Privacy Policy</a></li>
                             <li><a href="#" >Terms and conditions</a></li>
                             <li><a href="#" >HealthCare Directory</a></li>
-                            <li><a href="#" >Practo Health wiki</a></li>
+                            <li><a href="#" >AarogyaVat Health wiki</a></li>
                             <li><a href="#" >Corporate Wellness</a></li>
                         </ul>
                     </div>
@@ -63,8 +63,8 @@ class Footer extends Component {
                     </div>
                 </div>
                 <div className="below">
-                    <h1>Practo</h1>
-                    <h4>Copyright &copy; , Practo,All rights reserved</h4>
+                    <h1>AarogyaVat</h1>
+                    <h4>Copyright &copy; , AarogyaVat,All rights reserved</h4>
                 </div>
             </div>
         );

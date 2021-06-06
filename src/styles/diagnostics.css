@@ -1,0 +1,83 @@
+.form-for-search {
+  float: left;
+  margin-left: 80px;
+}
+
+.btn-for-search {
+  height: 43px;
+  margin-left: -30px;
+}
+
+#top-banner {
+  width: 100%;
+  padding: 0px 30px;
+  margin-top: 20px;
+}
+
+#for-absolute {
+  position: absolute;
+}
+
+#for-relative {
+  padding: 40px 0px;
+  margin-left: 80px;
+  width: 50%;
+}
+
+.offer-line-1 {
+  float: left;
+  color: green;
+}
+
+.offer-line-2 {
+  color: green;
+}
+
+.btn-on-banner {
+  margin-left: 80px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.card {
+  height: auto;
+  width: 240px;
+}
+
+.heading-in-card {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ruler {
+  border: 10px solid rgb(214, 211, 211);
+  border-radius: 5px;
+  margin: 0px 50px;
+}
+
+.why-us-section {
+  margin: 20px 50px;
+}
+
+strong {
+  margin-top: 20px;
+  display: block;
+}
+
+.partner-img {
+  width: 40%;
+}
+
+.works {
+  background-color: rgb(214, 211, 211);
+  padding: 30px 40px;
+}
+
+.we-do-great {
+  padding: 40px 10px;
+}
+
+.desc {
+  margin: 50px 80px;
+}

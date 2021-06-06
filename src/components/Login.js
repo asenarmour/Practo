@@ -5,8 +5,8 @@ import logImg from '../images/log-img.webp';
 import {Container, Col, Form,FormGroup, Label, Input,Button,} from 'reactstrap';
 import Footer from './Footer';
 import axios from 'axios';
-import {useDispatch} from 'react-redux'
-import {updateLog} from '../actions/index'
+import { updateLog } from "../actions/index";
+import {  useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom';
 
 const Login = () => {
@@ -17,22 +17,20 @@ const Login = () => {
 
     const handleClick=async(e)=>{
         e.preventDefault()
-        await axios.post(`/login`,item,
+        axios.post(`/login`,item,
         {
             headers: {
                 'Content-Type': 'application/json'
             }
         })
         .then((response)=>{
-            if(response.data==="success" ){
-                axios.get(`/user/${item.email}`)
-                .then((response)=>{console.log(response.data)})
+            if(response.data!==""){
+                dispatch(updateLog())
+                localStorage.setItem('user', JSON.stringify(response.data))
                 history.push("/")
-                const dis=()=>dispatch(updateLog())
-                dis()
             }
             else{
-                console.log(response.data);
+                console.log(JSON.parse(localStorage.getItem("user")))
             }
         })
         .catch(err => console.log(err));
