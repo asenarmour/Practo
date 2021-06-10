@@ -1,0 +1,18 @@
+.btn-for-search {
+  height: 40px;
+  margin-left: -25px;
+}
+
+.form-for-search {
+  float: left;
+  /* margin-left: 130px; */
+}
+
+.card {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.product-img {
+  width: 250px;
+}

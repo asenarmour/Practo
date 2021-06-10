@@ -1,82 +1,98 @@
-img{
-    width:100%;
-}
-.upside{
-    background-image: url("../images/doctors_bg.jpeg");
-    padding-bottom: 3rem;
-}
-.upside h1{
-    text-align: center;
-    padding:2rem;
-}
-.upside h3,Form{
-    text-align: center;
-    justify-content: center;
-    padding:1rem;
-}
-.upside ul{
-    display: flex;
-    justify-content: space-between;
-    list-style-type: none;
+.top {
+  margin-top: -15px;
+  padding-top: 20px;
+  height: 480px;
+  background-image: url("../images/doctors_bg.jpeg");
 }
 
-.doctor-list a{
-    color:black;
-    font-weight: bold;
+.search {
+  margin-top: -20px;
 }
-.below-one{
-    background-color:#9ca996;
-    padding-left: 4rem;
-}
-
-.card-below{
-    background-color:#9ca996;
+#search-bar {
+  width: 100%;
+  height: 45px;
 }
 
-.below-one a{
-    color:#e4eee0;
-}
-.below-one a:hover{
-    color:white;
-    background-color: #e4eee0;
-}
-.card-below img{
-    width:2rem;
+#search-btn {
+  width: 100%;
+  height: 45px;
+  font-size: large;
+  margin-left: -20px;
 }
 
-/* ------------------------                  Section 3              ------------------------ */
-
-.section-3{
-    background-color:#e0e0e0;
+.popular-searches {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
-.section-3-first img{
-    margin: 5rem;
-    border-radius: 25%;
-    width: 50%;
+.suggestion {
+  height: 100px;
+  background-color: #9ca996;
 }
-.section3-second{
-    margin-top: 5rem;
-}
-.section3-second img{
-    width: 2rem;
+.suggestion div div {
+  display: block;
 }
 
-.section3-second h5{
-    padding: 1 rem;
+.security {
+  height: 600px;
 }
 
-.section-3-third img{
-    width: 25%;
+.security-text {
+  padding-top: 100px;
+  padding-left: 100px;
 }
-.section-4-first img{
-    border-radius: 25%;
-    width:75%;
+.suggestion-img {
+  height: 30px;
 }
-.section-4-second img{
-    width: 2rem;
+
+.security-img {
+  padding: 10px 0px;
+  height: 580px;
 }
-.section-4-second{
-    margin-top:10rem;
-    padding-top: 3rem;
+.security-bottom-img {
+  height: 100px;
+}
+ul {
+  margin-top: 20px;
+  margin-left: -35px;
+}
+
+.list-for-security li {
+  list-style: none;
+  background-image: url("../gif/tick1.gif");
+  background-repeat: no-repeat;
+  background-position: 0px center;
+  padding: 0px 0px 0px 28px;
+  background-size: 20px;
+
+  letter-spacing: 1px;
+  word-spacing: 5px;
+
+  margin-bottom: 14px;
+}
+
+.vid {
+  height: 580px;
+  border-radius: 30px;
+  padding: 5px 0px;
+}
+
+.add-bar {
+  background-color: #edf1eb;
+  border-bottom: 2px solid #edf1eb;
+}
+.magazines {
+  margin: 0px auto;
+}
+
+.magazine-logo {
+  height: 100px;
+  width: 200px;
+}
+
+.medicine-ads {
+  padding: 100px 50px;
+}
+.medicine-box-img {
+  /* padding-right: 500px; */
 }
