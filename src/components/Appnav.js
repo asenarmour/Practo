@@ -1,10 +1,10 @@
-// import React, { Component } from 'react';
 import { Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
 import "../styles/Appnav.css";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import React from "react";
 import { updateLog } from "../actions/index";
+import logo from "../images/logo.PNG";
 const Appnav = () => {
   const history = useHistory();
 
@@ -12,11 +12,6 @@ const Appnav = () => {
   const dispatch = useDispatch();
   function handleClick() {
     history.push("/login");
-  }
-  const handleLogout=(e)=>{
-    e.preventDefault()
-    dispatch(updateLog())
-    localStorage.clear();
   }
   return (
     <div className="nav-bar">
@@ -30,6 +25,7 @@ const Appnav = () => {
             <Nav.Link href="/pharmacy">Pharmacy</Nav.Link>
             <Nav.Link href="/diagnostics">Diagnostics</Nav.Link>
           </Nav>
+          <img src={logo} className="logo" />
           <Nav className="ml-auto">
             <NavDropdown title="For-Provider" id="basic-nav-dropdown">
               <NavDropdown.Item href="#">Action</NavDropdown.Item>
@@ -46,19 +42,23 @@ const Appnav = () => {
               <NavDropdown.Item href="#">Separated link</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          {!isLogged ? (
+          {isLogged ? (
             <Button onClick={handleClick} variant="outline-success">
               Login/SignUp
             </Button>
           ) : (
             <NavDropdown title="Profile" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#">Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#">My Test</NavDropdown.Item>
-              <NavDropdown.Item href="#">My Appointments</NavDropdown.Item>
-              <NavDropdown.Item href="#">My Medical Records</NavDropdown.Item>
-              <NavDropdown.Item href="#">My Feedback</NavDropdown.Item>
+              <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+              <NavDropdown.Item href="/lab-tests">My Test</NavDropdown.Item>
+              <NavDropdown.Item href="/appointments">
+                My Appointments
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/medical-records">
+                My Medical Records
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/feedback">My Feedback</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#" onClick={handleLogout}>
+              <NavDropdown.Item href="#" onClick={() => dispatch(updateLog())}>
                 Logout
               </NavDropdown.Item>
             </NavDropdown>

@@ -26,6 +26,7 @@ import Appnav from "./Appnav";
 import Footer from "./Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Slider from "./Slider";
+import { Link } from "react-router-dom";
 const Pharmacy = () => {
   return (
     <div>
@@ -187,25 +188,38 @@ const Pharmacy = () => {
             <div className="row ">
               <div className="col">
                 <div>
-                  <img src={baby_care} class="card-img" alt="..." />
+                  <a href="/baby-care">
+                    {" "}
+                    <img src={baby_care} class="card-img" alt="..." />
+                  </a>
                 </div>
               </div>
 
               <div className="col">
                 <div>
-                  <img src={fitness_and_wellcare} class="card-img" alt="..." />
+                  <a href="/fitness-and-wellness">
+                    <img
+                      src={fitness_and_wellcare}
+                      class="card-img"
+                      alt="..."
+                    />
+                  </a>
                 </div>
               </div>
 
               <div className="col">
                 <div>
-                  <img src={family_care} class="card-img" alt="..." />
+                  <a href="family-care">
+                    <img src={family_care} class="card-img" alt="..." />
+                  </a>
                 </div>
               </div>
 
               <div className="col">
                 <div>
-                  <img src={personal_care} class="card-img" alt="..." />
+                  <a href="personal-care">
+                    <img src={personal_care} class="card-img" alt="..." />
+                  </a>
                 </div>
               </div>
             </div>

@@ -8,10 +8,10 @@ import Consult from "./components/Consult";
 import Pharmacy from "./components/Pharmacy";
 import Diagnostics from "./components/Diagnostics";
 import Doctor from "./components/Doctor";
-import Specialist from "./components/Specialist";
+import Profile from "./components/Profile";
+import BabyCare from "./components/Baby_Care";
 import Conference from "./components/Conference";
 
-// import datepicker from './datepicker';
 class App extends Component {
   state = {};
   render() {
@@ -25,7 +25,32 @@ class App extends Component {
           <Route path="/pharmacy" exact={true} component={Pharmacy} />
           <Route path="/diagnostics" exact={true} component={Diagnostics} />
           <Route path="/doctors" exact={true} component={Doctor} />
-          <Route path="/specialist" exact={true} component={Specialist} />
+
+          <Route path="/profile" exact={true} component={Profile} />
+          <Route path="/edit-profile" exact={true} component={Profile} />
+          <Route path="/medical-records" exact={true} component={Profile} />
+
+          <Route path="/appointments" component={Profile} exact />
+          <Route path="/lab-tests" exact={true} component={Profile} />
+          <Route path="/medicine-orders" exact={true} component={Profile} />
+
+          <Route
+            path="/online-consultations"
+            exact={true}
+            component={Profile}
+          />
+
+          <Route path="/articles" exact={true} component={Profile} />
+          <Route path="/feedback" exact={true} component={Profile} />
+          <Route path="/payments" exact={true} component={Profile} />
+          <Route path="/baby-care" exact={true} component={BabyCare} />
+          <Route
+            path="/fitness-and-wellness"
+            exact={true}
+            component={BabyCare}
+          />
+          <Route path="/family-care" exact={true} component={BabyCare} />
+          <Route path="/personal-care" exact={true} component={BabyCare} />
           <Route path="/conference" exact={true} component={Conference} />
         </Switch>
       </Router>

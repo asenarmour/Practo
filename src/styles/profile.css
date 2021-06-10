@@ -1,0 +1,25 @@
+.side-bar {
+  height: 500px;
+  /* width: 100%; */
+  overflow: scroll;
+}
+
+.content-box {
+  height: 500px;
+  overflow: scroll;
+}
+.side-bar tr {
+  height: 55px;
+}
+
+.person-square {
+  height: 30px;
+}
+
+.contact-details {
+  padding-top: 5px;
+}
+
+Link:hover {
+  text-decoration: none;
+}
