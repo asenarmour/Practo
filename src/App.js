@@ -9,6 +9,7 @@ import Pharmacy from "./components/Pharmacy";
 import Diagnostics from "./components/Diagnostics";
 import Doctor from "./components/Doctor";
 import Specialist from "./components/Specialist";
+import Conference from "./components/Conference";
 
 // import datepicker from './datepicker';
 class App extends Component {
@@ -25,6 +26,7 @@ class App extends Component {
           <Route path="/diagnostics" exact={true} component={Diagnostics} />
           <Route path="/doctors" exact={true} component={Doctor} />
           <Route path="/specialist" exact={true} component={Specialist} />
+          <Route path="/conference" exact={true} component={Conference} />
         </Switch>
       </Router>
     );
