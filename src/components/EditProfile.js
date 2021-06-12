@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import {
   Button,
   Row,
@@ -9,23 +9,31 @@ import {
   Label,
   Input,
 } from "reactstrap";
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+
 const EditProfile = () => {
-  const data = {
-    userId: "121",
-    name: "Bareet Singh",
-    gender: "Male",
-    contactNumber: "1234567890",
-    emailId: "abc@gmail.com",
-    dob: "14/08/1998",
-    bloodGroup: "O+",
-    city: "Kashipur",
-    state: "UK",
-    country: "India",
-    pincode: "244713",
-  };
-  const addressLine1 =
-    data.city + ", " + data.state + ", " + data.country + ", " + data.pincode;
-  const addressLine2 = addressLine1;
+  const history=useHistory();
+
+  const handleClick=async(e)=>{
+    e.preventDefault()
+    localStorage.removeItem("user")
+    localStorage.setItem("user",JSON.stringify(data))
+    axios.post(`/update-patient`,data,
+    {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((response)=>{})
+    .catch(err => console.log(err));
+    history.push("/profile")
+}
+
+  const [data,setData]=useState({})
+  useEffect(()=>{
+    setData(JSON.parse(localStorage.getItem("user")))
+  },[])
 
   return (
     <div>
@@ -38,7 +46,7 @@ const EditProfile = () => {
                 type="text"
                 name="userId"
                 id="userId"
-                defaultValue={data.userId}
+                value={data.id}
                 disabled
               />
             </FormGroup>
@@ -50,7 +58,8 @@ const EditProfile = () => {
                 type="text"
                 name="name"
                 id="name"
-                defaultValue={data.name}
+                onChange={e=>setData({...data,name:e.target.value})}
+                value={data.name}
               />
             </FormGroup>
           </Col>
@@ -62,7 +71,8 @@ const EditProfile = () => {
                 type="text"
                 name="gender"
                 id="gender"
-                defaultValue={data.gender}
+                onChange={e=>setData({...data,gender:e.target.value})}
+                value={data.gender}
               />
             </FormGroup>
           </Col>
@@ -73,25 +83,29 @@ const EditProfile = () => {
                 type="text"
                 name="bloodGroup"
                 id="bloodGroup"
-                defaultValue={data.bloodGroup}
+                onChange={e=>setData({...data,bloodGroup:e.target.value})}
+                value={data.bloodGroup}
               />
             </FormGroup>
           </Col>
           <Col md={5}>
             <FormGroup>
               <Label for="dob">DOB</Label>
-              <Input type="text" name="dob" id="dob" defaultValue={data.dob} />
+              <Input type="text" name="dob" id="dob"
+              onChange={e=>setData({...data,dob:e.target.value})}
+              value={data.dob} />
             </FormGroup>
           </Col>
 
           <Col md={4}>
             <FormGroup>
-              <Label for="number">Contact Number</Label>
+              <Label for="phoneNumber">Contact Number</Label>
               <Input
                 type="text"
-                name="number"
-                id="number"
-                defaultValue={data.contactNumber}
+                name="phoneNumber"
+                id="phoneNumber"
+                onChange={e=>setData({...data,phoneNumber:e.target.value})}
+                value={data.phoneNumber}
               />
             </FormGroup>
           </Col>
@@ -100,9 +114,10 @@ const EditProfile = () => {
               <Label for="emailId">Email Id</Label>
               <Input
                 type="email"
-                name="emailId"
-                id="emailId"
-                defaultValue={data.emailId}
+                name="email"
+                id="email"
+                onChange={e=>setData({...data,email:e.target.value})}
+                value={data.email}
               />
             </FormGroup>
           </Col>
@@ -114,7 +129,8 @@ const EditProfile = () => {
                 type="text"
                 name="city"
                 id="city"
-                defaultValue={data.city}
+                onChange={e=>setData({...data,city:e.target.value})}
+                value={data.city}
               />
             </FormGroup>
           </Col>
@@ -126,7 +142,8 @@ const EditProfile = () => {
                 type="text"
                 name="pincode"
                 id="pincode"
-                defaultValue={data.pincode}
+                onChange={e=>setData({...data,pincode:e.target.value})}
+                value={data.pincode}
               />
             </FormGroup>
           </Col>
@@ -137,7 +154,8 @@ const EditProfile = () => {
                 type="text"
                 name="state"
                 id="state"
-                defaultValue={data.state}
+                onChange={e=>setData({...data,state:e.target.value})}
+                value={data.state}
               />
             </FormGroup>
           </Col>
@@ -148,7 +166,8 @@ const EditProfile = () => {
                 type="text"
                 name="country"
                 id="country"
-                defaultValue={data.country}
+                onChange={e=>setData({...data,country:e.target.value})}
+                value={data.country}
               />
             </FormGroup>
           </Col>
@@ -159,8 +178,9 @@ const EditProfile = () => {
                 type="textarea"
                 name="addressLine1"
                 id="addressLine1"
+                onChange={e=>setData({...data,addressLine1:e.target.value})}
                 placeholder="Address Line 1"
-                defaultValue={addressLine1}
+                value={data.addressLine1}
               />
             </FormGroup>
           </Col>
@@ -172,14 +192,15 @@ const EditProfile = () => {
                 type="textarea"
                 name="addressLine2"
                 id="addressLine2"
+                onChange={e=>setData({...data,addressLine2:e.target.value})}
                 placeholder="Address Line 2"
-                defaultValue={addressLine2}
+                value={data.addressLine2}
               />
             </FormGroup>
           </Col>
         </Row>
 
-        <Button type="submit" color="primary">
+        <Button  onClick={handleClick} type="submit" color="primary">
           Submit
         </Button>
       </Form>

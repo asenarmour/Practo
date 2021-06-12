@@ -12,6 +12,8 @@ import "../styles/Conference.css";
 
 const socket = io.connect('http://localhost:5000')
 
+
+
 function Conference() {
   const [ me, setMe ] = useState("")
 	const [ stream, setStream ] = useState()

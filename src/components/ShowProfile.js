@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import {
   Button,
   Row,
@@ -9,23 +9,12 @@ import {
   Label,
   Input,
 } from "reactstrap";
+
 const ShowProfile = () => {
-  const data = {
-    userId: "121",
-    name: "Bareet Singh",
-    gender: "Male",
-    contactNumber: "1234567890",
-    emailId: "abc@gmail.com",
-    dob: "14/08/1998",
-    bloodGroup: "O+",
-    city: "Kashipur",
-    state: "UK",
-    country: "India",
-    pincode: "244713",
-  };
-  const addressLine1 =
-    data.city + ", " + data.state + ", " + data.country + ", " + data.pincode;
-  const addressLine2 = addressLine1;
+  const [data,setData]=useState({})
+  useEffect(()=>{
+    setData(JSON.parse(localStorage.getItem("user")))
+  },[])
 
   return (
     <div>
@@ -38,7 +27,7 @@ const ShowProfile = () => {
                 type="text"
                 name="userId"
                 id="userId"
-                value={data.userId}
+                value={data.id}
                 disabled
               />
             </FormGroup>
@@ -95,12 +84,12 @@ const ShowProfile = () => {
 
           <Col md={4}>
             <FormGroup>
-              <Label for="number">Contact Number</Label>
+              <Label for="phoneNumber">Contact Number</Label>
               <Input
                 type="text"
-                name="number"
-                id="number"
-                value={data.contactNumber}
+                name="phoneNumber"
+                id="phoneNumber"
+                value={data.phoneNumber}
                 disabled
               />
             </FormGroup>
@@ -112,7 +101,7 @@ const ShowProfile = () => {
                 type="email"
                 name="emailId"
                 id="emailId"
-                value={data.emailId}
+                value={data.email}
                 disabled
               />
             </FormGroup>
@@ -175,7 +164,7 @@ const ShowProfile = () => {
                 name="addressLine1"
                 id="addressLine1"
                 placeholder="Address Line 1"
-                value={addressLine1}
+                value={data.addressLine1}
                 disabled
               />
             </FormGroup>
@@ -189,7 +178,7 @@ const ShowProfile = () => {
                 name="addressLine2"
                 id="addressLine2"
                 placeholder="Address Line 2"
-                value={addressLine2}
+                value={data.addressLine2}
                 disabled
               />
             </FormGroup>

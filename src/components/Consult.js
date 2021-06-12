@@ -54,9 +54,9 @@ const Consult = () => {
             <div class="card" style={{ width: "18rem" }}>
               <img src={pregnant_woman} class="card-img-top" alt="..." />
               <div class="card-body">
-                <h5 class="card-title">Gynaecology(₹ 249)</h5>
+                <h5 class="card-title">Gynaecology</h5>
 
-                <a href="#" class="btn btn-primary">
+                <a href="/gynacologyProducts" class="btn btn-primary">
                   Consult Now!
                 </a>
               </div>
@@ -66,9 +66,9 @@ const Consult = () => {
             <div class="card" style={{ width: "18rem" }}>
               <img src={general_physician} class="card-img-top" alt="..." />
               <div class="card-body">
-                <h5 class="card-title">General Physician(₹ 299)</h5>
+                <h5 class="card-title">General Physician</h5>
 
-                <a href="#" className="btn btn-primary">
+                <a href="/general-physian" className="btn btn-primary">
                   Consult Now!
                 </a>
               </div>
@@ -81,7 +81,7 @@ const Consult = () => {
                 <h5 className="card-title">
                   Stomach and Digestion
                   <br />
-                  (₹ 249)
+                  
                 </h5>
 
                 <a href="#" className="btn btn-primary">
@@ -94,9 +94,9 @@ const Consult = () => {
             <div class="card" style={{ width: "18rem" }}>
               <img src={pediatrics} class="card-img-top" alt="..." />
               <div class="card-body">
-                <h5 class="card-title">Pediatrics(₹ 349)</h5>
+                <h5 class="card-title">Pediatrics</h5>
 
-                <a href="#" class="btn btn-primary">
+                <a href="/pediatricianProducts" class="btn btn-primary">
                   Consult Now!
                 </a>
               </div>
