@@ -247,7 +247,9 @@ const Doctor = () => {
                         {/* --------------------------- */}
                         <div class="row justify-content-start">
                             <div className="col-3.5">
-                                <Button>Order Medicines</Button>
+                            <a href="/pharmacy" class="btn btn-primary">
+                            Order Medicines
+                </a>
                             </div>
 
                             <div class="col-1">

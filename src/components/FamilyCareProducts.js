@@ -1,48 +1,41 @@
 import baby_care_products from "../images/baby_care_products.png";
-import React from "react";
+import React,{useState,useEffect}  from "react";
 import "../styles/baby_care.css";
 import { FormControl, Form, Button } from "react-bootstrap";
+import axios from 'axios';
 
 const FamilyCareProducts = () => {
-  var data = [
-    {
-      product_id: "1401",
-      name: "Apollo Life Unisex Adult Diapers",
-      type: "Senior Care",
-      price: "100 Rs.",
-      description:
-        "Apollo Life Adult Diapers (XL) helps in solving the problem of incontinence - the inability to exercise control over the bladder and the bowel. Ideal for patients suffering from diabetes, urology patients, bedridden and disabled patients",
-    },
-    {
-      product_id: "1402",
-      name: "Pro-Pl Chocolate Powder Tin 200g",
-      type: "Mother Care",
-      price: "330 Rs.",
-      description:
-        "Pro-Pl powder is a blend of vitamins, minerals and essential nutrients required for promoting a baby's health through mother's lactation. Pro-Pl powder is one of the nutritional supplement where pregnant and lactating women would be lacking nutrition. This helps in providing DHA, GLA and other essential vitamins and minerals. It helps in preventing hypertension, preterm delivery, delayed growth of the baby, preaclampsia.",
-    },
-    {
-      product_id: "1403",
-      name: "Pro-Pl Chocolate Powder Jar 500g",
-      type: "Mother Care",
-      price: "250 Rs.",
-      description:
-        "Pro-Pl powder is a blend of vitamins, minerals and essential nutrients required for promoting a baby's health through mother's lactating.",
-    },
-  ];
+
+  const [item,setItem]=useState([{id:'',name:'',type:'',price:'',description:''}])
+
+  const buyMedicine=(e,p)=>{
+    const MedicineId=p.id
+    const user=localStorage.getItem("user")
+    const patient=JSON.parse(user)
+    const id=patient.id
+    axios.get(`/add-order/${MedicineId}/${id}`).then(response=>{console.log("done")})
+      .catch(err=>console.log(err));
+      
+  }
+
+  useEffect(()=>{
+    axios.get('/get-medicine-by-type/family-care').then(response=>{setItem(response.data)})
+      .catch(err=>console.log(err));
+  },[])
+
 
   return (
     <div>
-      {data.map((e) => (
+      {item.map((p) => (
         <div class="card">
           <div class="row">
             <div class="col-3">
               <img src={baby_care_products} className="product-img" />
             </div>
             <div class="col-5">
-              <h2>{e.name}</h2>
-              <h5>{e.type}</h5>
-              <h4>{e.price}</h4>
+              <h2>{p.name}</h2>
+              <h5>{p.type}</h5>
+              <h4>{p.price}</h4>
               <input
                 type="number"
                 defaultValue="1"
@@ -50,12 +43,12 @@ const FamilyCareProducts = () => {
                 style={{ width: "50px" }}
               />
               <label style={{ marginLeft: "4px" }}>Units</label>
-              <Button style={{ margin: "10px" }}>Buy Now</Button>
-              <Button>Add to Cart</Button>
+              {/* <Button style={{ margin: "10px" }}>Buy Now</Button> */}
+              <Button onClick={(e)=>buyMedicine(e,p)}>Add to Cart</Button>
             </div>
             <div class="col-4" style={{ padding: "10px 20px 20px 0px" }}>
               <h5>Description</h5>
-              <p>{e.description}</p>
+              <p>{p.description}</p>
             </div>
           </div>
         </div>

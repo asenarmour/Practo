@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm run dev' on folder practo-front to start express servr
+### `npm run dev' on folder practo-front to start express server
 
 ### `npm start` after changing folder to my-app
 

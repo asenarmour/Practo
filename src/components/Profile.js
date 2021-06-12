@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState,useEffect} from "react";
 import Appnav from "./Appnav";
 import "../styles/profile.css";
 import person_square from "../svg/person-square.svg";
@@ -7,18 +7,21 @@ import ShowProfile from "./ShowProfile";
 import EditProfile from "./EditProfile";
 import MedicalRecords from "./MedicalRecords";
 import Appointments from "./Appointments";
-import LabTests from "./LabTests";
 import MedicineOrders from "./MedicineOrders";
 import OnlineConsultations from "./OnlineConsultations";
 import Articles from "./Articles";
 import Feedback from "./Feedback";
-import Payments from "./Payments";
 
 const Profile = () => {
+  const [user,setUser]=useState({})
+  useEffect(()=>{
+    setUser(JSON.parse(localStorage.getItem("user")))
+  },[])
+
   return (
     <div>
       <Appnav />
-
+      
       <Router>
         <div className="container-fluid">
           <div class="row navbar">
@@ -30,8 +33,8 @@ const Profile = () => {
                   <img src={person_square} className="person-square" />
                 </div>
                 <div className="col contact-details">
-                  <div class="row">Bareet Singh</div>
-                  <div class="row">+917055126883</div>
+                  <div class="row">{user.name}</div>
+  
                 </div>
               </div>
             </nav>
@@ -68,13 +71,7 @@ const Profile = () => {
                   </Link>
                 </td>
               </tr>
-              <tr>
-                <td>
-                  <Link to="/lab-tests" tag="a">
-                    Lab Tests
-                  </Link>
-                </td>
-              </tr>
+              
               <tr>
                 <td>
                   <Link to="/medicine-orders" tag="a">
@@ -103,13 +100,7 @@ const Profile = () => {
                   </Link>
                 </td>
               </tr>
-              <tr>
-                <td>
-                  <Link to="/payments" tag="a">
-                    Payments
-                  </Link>
-                </td>
-              </tr>
+              
             </div>
 
             {/* -------------------content box------------------- */}
@@ -127,7 +118,6 @@ const Profile = () => {
                 component={MedicalRecords}
               />
               <Route path="/appointments" component={Appointments} exact />
-              <Route path="/lab-tests" exact={true} component={LabTests} />
               <Route
                 path="/medicine-orders"
                 exact={true}
@@ -140,7 +130,6 @@ const Profile = () => {
               />
               <Route path="/articles" exact={true} component={Articles} />
               <Route path="/feedback" exact={true} component={Feedback} />
-              <Route path="/payments" exact={true} component={Payments} />
             </div>
           </div>
         </div>

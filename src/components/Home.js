@@ -16,6 +16,7 @@ import nutrition from '../images/nutrition.jpeg';
 import Slider from './Slider';
 import Footer from './Footer'
 import { GeoAlt,Search } from 'react-bootstrap-icons';
+import pregnant_woman from "../images/pregnant_woman.jpg";
 
 
 class Home extends Component {
@@ -84,7 +85,8 @@ class Home extends Component {
                             <p>Private online consultations with verified doctors in all specialists</p>
                         </div>
                         <div className="col-md-6">
-                            <Button variant="primary">View All Specialities</Button>
+                        <a href="/consult" class="btn btn-primary">View All Specialities</a>
+                            {/* <Button variant="primary">View All Specialities</Button> */}
                         </div>
                     </div>
                 </div>
@@ -93,22 +95,22 @@ class Home extends Component {
                         <div className="col">
                             <img src={pimples} alt="doctor" />  
                             <h5>Acne,Pimples</h5><h5>or skin issue</h5>
-                            <a href="#"><b>Consult Now</b></a>
+                            <a href="/dermatologistProduct"><b>Consult Now</b></a>
                         </div>
                         <div className="col">
                             <img src={child} alt="doctor" /> 
                             <h5>Child not feeling</h5><h5>well</h5>
-                            <a href="#"><b>Consult Now</b></a>
+                            <a href="/pediatricianProducts"><b>Consult Now</b></a>
                         </div>
                         <div className="col">
-                            <img src={cough} alt="doctor" />  
-                            <h5>Cough,Cold</h5><h5>or fever</h5>
-                            <a href="#"><b>Consult Now</b></a>
+                            <img src={pregnant_woman} alt="doctor" />  
+                            <h5>Gynaecology</h5><h5>or fever</h5>
+                            <a href="/gynacologyProducts"><b>Consult Now</b></a>
                         </div>
                         <div className="col">
                             <img src={depression} alt="doctor" />
                             <h5>Depression or</h5><h5>Anxiety</h5>
-                            <a href="#"><b>Consult Now</b></a>
+                            <a href="/physiatristProducts"><b>Consult Now</b></a>
                         </div>
                     </div>
                 </div>

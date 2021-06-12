@@ -11,6 +11,11 @@ import Doctor from "./components/Doctor";
 import Profile from "./components/Profile";
 import BabyCare from "./components/Baby_Care";
 import Conference from "./components/Conference";
+import GynacologyProducts from "./components/GynacologyProducts";
+import DermatologistProduct from "./components/DermatologistProduct";
+import PhysiatristProducts from "./components/PhysiatristProducts";
+import PediatricianProducts from "./components/PediatricianProducts";
+import GeneralPhysianProduct from "./components/GeneralPhysianProduct";
 
 class App extends Component {
   state = {};
@@ -31,9 +36,9 @@ class App extends Component {
           <Route path="/medical-records" exact={true} component={Profile} />
 
           <Route path="/appointments" component={Profile} exact />
-          <Route path="/lab-tests" exact={true} component={Profile} />
           <Route path="/medicine-orders" exact={true} component={Profile} />
-
+          <Route path="/general-physian" exact={true} component={GeneralPhysianProduct} />
+          
           <Route
             path="/online-consultations"
             exact={true}
@@ -42,7 +47,6 @@ class App extends Component {
 
           <Route path="/articles" exact={true} component={Profile} />
           <Route path="/feedback" exact={true} component={Profile} />
-          <Route path="/payments" exact={true} component={Profile} />
           <Route path="/baby-care" exact={true} component={BabyCare} />
           <Route
             path="/fitness-and-wellness"
@@ -52,6 +56,10 @@ class App extends Component {
           <Route path="/family-care" exact={true} component={BabyCare} />
           <Route path="/personal-care" exact={true} component={BabyCare} />
           <Route path="/conference" exact={true} component={Conference} />
+          <Route path="/gynacologyProducts" exact={true} component={GynacologyProducts} />
+          <Route path="/dermatologistProduct" exact={true} component={DermatologistProduct} />
+          <Route path="/pediatricianProducts" exact={true} component={PediatricianProducts} />
+          <Route path="/physiatristProducts" exact={true} component={PhysiatristProducts} />
         </Switch>
       </Router>
     );
