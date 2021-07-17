@@ -5,8 +5,11 @@ import docpic from '../images/docPic.jpg'
 import Appnav from "./Appnav";
 import DatePicker from 'react-date-picker';
 import TimePicker from 'react-time-picker';
+import { useHistory } from 'react-router-dom';
 
 const DermatologistProduct = () => {
+
+    const history=useHistory();
 
     const [value, onChange] = useState(new Date());
     const [time, setTiming] = useState('10:00');
@@ -29,6 +32,7 @@ const DermatologistProduct = () => {
             }
         }).then(response=>{console.log(response.data)})
             .catch(err=>console.log(err));
+        history.push("/appointments");
     }
 
 

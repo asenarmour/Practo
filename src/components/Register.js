@@ -5,7 +5,9 @@ import logImg from '../images/log-img.webp';
 import {Container, Col, Form,FormGroup, Label, Input,Button,} from 'reactstrap';
 import Footer from './Footer'
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 const Register = () => {
+    const history = useHistory();
 
     const [item,setItem] = useState({username:'',email:'',password:'',confirmPass:'',firstName:'',lastName:'',registerAs:''})
     const handleClick=(e)=>{
@@ -16,6 +18,7 @@ const Register = () => {
             }
         }).then(response=>{console.log(response.data)})
             .catch(err=>console.log(err));
+            history.push("/login");
     }
 
     return (
